@@ -19,7 +19,10 @@
 - Universal app executable includes `arm64` and `x86_64`.
 - App and bundled Platform Tools signed with Developer ID and hardened runtime.
 - Deep, strict signature verification passed.
-- Apple notarization is pending resolution of the developer account's agreement requirement. The app is not yet published as a notarized download.
+- Apple notarization: **Accepted**, October 8, 2026. Submission `5a49942b-c33d-40c4-b73c-30eade7c3c7d`.
+- Notarization ticket stapled and validated.
+- Gatekeeper assessment: **accepted**, source **Notarized Developer ID**.
+- Final distribution ZIP regenerated after stapling; SHA-256 provided with the release.
 
 ## Hardware evidence
 

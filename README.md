@@ -6,7 +6,7 @@ A native macOS 15.6+ file manager for Meta Quest headsets, built with Swift 6 an
 
 ## Download
 
-The first downloadable release is being prepared. Signed builds will be published to [GitHub Releases](https://github.com/mingistech/QuestBridge/releases) after Apple notarization is complete. To install a published release, unzip it, move **QuestBridge.app** to **Applications**, and open it.
+Download the **Developer ID signed and Apple-notarized** app from [GitHub Releases](https://github.com/mingistech/QuestBridge/releases/latest). Unzip it, move **QuestBridge.app** to **Applications**, and open it. The release includes a stapled notarization ticket and a SHA-256 checksum file.
 
 Requires macOS 15.6 or later. The release supports Apple Silicon and Intel Macs and includes official ADB tools, so no Homebrew or Android Studio installation is needed. USB debugging must be authorized on your headset before transferring files.
 
