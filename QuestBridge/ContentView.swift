@@ -1,4 +1,5 @@
 import SwiftUI
+import AppKit
 
 struct MainWindowView: View {
     @Bindable var model: MainViewModel
@@ -64,9 +65,22 @@ struct MainWindowView: View {
         }
         .sheet(isPresented: $model.showOnboarding) { OnboardingView(model: model) }
         .sheet(item: $model.conflict) { prompt in ConflictView(name: prompt.name, resolve: model.resolveConflict).interactiveDismissDisabled() }
-        .alert("QuestBridge", isPresented: Binding(get: { model.errorMessage != nil }, set: { if !$0 { model.errorMessage = nil } })) {
-            Button("OK", role: .cancel) { model.errorMessage = nil }
-        } message: { Text(model.errorMessage ?? "") }
+        .alert(model.errorMessage != nil ? "QuestBridge" : (model.updates.notice?.title ?? "QuestBridge"),
+               isPresented: Binding(get: {
+                   !model.showOnboarding && model.conflict == nil && (model.errorMessage != nil || model.updates.notice != nil)
+               }, set: { shown in
+                   if !shown {
+                       if model.errorMessage != nil { model.errorMessage = nil }
+                       else { model.updates.dismissNotice() }
+                   }
+               })) {
+            if model.errorMessage == nil, let release = model.updates.notice?.release {
+                Button("View Release") { NSWorkspace.shared.open(release.pageURL) }
+                Button("Later", role: .cancel) { }
+            } else { Button("OK", role: .cancel) { } }
+        } message: {
+            Text(model.errorMessage ?? model.updates.notice?.message ?? "")
+        }
     }
     private func sidebarItem(_ title: String, component: String, icon: String) -> some View {
         let destination = model.context.map { $0.root + (component.isEmpty ? "" : "/" + component) }

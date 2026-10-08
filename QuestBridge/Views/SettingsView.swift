@@ -2,6 +2,7 @@ import SwiftUI
 import AppKit
 
 struct SettingsView: View {
+    @Environment(\.openWindow) private var openWindow
     @Bindable var model: MainViewModel
     var body: some View {
         @Bindable var preferences = model.preferences
@@ -12,6 +13,18 @@ struct SettingsView: View {
                     Text("Relative to shared storage, for example Movies or Movies/VR. Quick Upload and empty-area drops always use Movies. The folder must already exist.").font(.caption).foregroundStyle(.secondary)
                     Toggle("Remember the last remote folder", isOn: $preferences.rememberFolder)
                     LabeledContent("Deletion", value: "Always requires confirmation")
+                }
+                Section("Software updates") {
+                    LabeledContent("Installed version", value: model.updates.installedVersion)
+                    LabeledContent("Last checked", value: model.updates.lastChecked?.formatted(date: .abbreviated, time: .shortened) ?? "Not yet checked")
+                    if let release = model.updates.availableRelease {
+                        Link("Version \(release.displayVersion) is available — view release", destination: release.pageURL)
+                    }
+                    Button(model.updates.isChecking ? "Checking…" : "Check for Updates…") {
+                        openWindow(id: "main")
+                        Task { await model.updates.check(manual: true) }
+                    }.disabled(model.updates.isChecking)
+                    Text("QuestBridge checks GitHub weekly while open. Successful manual checks reset the weekly schedule. Updates are downloaded from the release page.").font(.caption).foregroundStyle(.secondary)
                 }
                 Section("Notifications") {
                     Toggle("Notify when the queue finishes", isOn: Binding(get: { preferences.notifications }, set: { value in

@@ -9,17 +9,17 @@
 - Shared ADB server startup and `devices -l`: successful, no headset attached at the time of that check.
 - Real `track-devices` initial empty frame confirmed as `0000`.
 - Native application launched; the disconnected window and expanded transfer history were inspected.
-- Core Swift tests: **23 tests in 7 suites passed**, including parameterized conflict and download cases.
+- Core Swift tests: **37 tests in 10 suites passed**, including parameterized conflict and download cases.
 - Final Debug and universal Release builds: **BUILD SUCCEEDED**. No Swift compiler warnings; Xcode emitted only its informational App Intents metadata warning (this app has no App Intents dependency).
 - `git diff --check`: clean.
 
 ## Release preparation
 
-- Version 1.0.0, build 1; bundle identifier `io.github.mingistech.QuestBridge`.
+- Version 1.0.0, build 2; bundle identifier `io.github.mingistech.QuestBridge`.
 - Universal app executable includes `arm64` and `x86_64`.
 - App and bundled Platform Tools signed with Developer ID and hardened runtime.
 - Deep, strict signature verification passed.
-- Apple notarization: **Accepted**, October 8, 2026. Submission `5a49942b-c33d-40c4-b73c-30eade7c3c7d`.
+- Apple notarization: **Accepted**, October 8, 2026. Submission `426bfbb9-d55f-4fb2-a3ae-7c5a24f00400`.
 - Notarization ticket stapled and validated.
 - Gatekeeper assessment: **accepted**, source **Notarized Developer ID**.
 - Final distribution ZIP regenerated after stapling; SHA-256 provided with the release.
@@ -61,3 +61,5 @@ The running application's history showed four **Completed · Verified and comple
 - Transfers: successful upload, original preservation on failure/corruption, insufficient space, Skip/Keep Both/Replace/Cancel, recursive folders, successful/replacement/failed/corrupt downloads.
 - Queue: serialization, active cancellation without false success, next-item continuation, failed-item retry, disconnect failing active and pending requests.
 - Processes: simultaneous stdout/stderr draining, bounded streaming memory, exit failures, timeout, cancellation and reaping even when SIGTERM is ignored.
+
+- Update checks: version comparisons, weekly schedule persistence, manual checks, cancellation, request deduplication, HTTP failures, draft/prerelease filtering, and the live public GitHub release endpoint verified.

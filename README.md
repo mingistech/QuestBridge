@@ -37,6 +37,14 @@ Enable Developer Mode on the headset, connect a USB data cable, and approve USB 
 - The bottom queue expands to show completed, skipped, cancelled, and failed items. Cancel or retry individual transfers; retries restart from the beginning. History is kept for the running session.
 - Name conflicts offer Replace, Skip, Keep Both, or Cancel, with a per-batch choice. **Replace replaces the whole item**, including folder contents. Settings can automatically skip or keep both; automatic replacement is deliberately unavailable.
 
+## Check for updates
+
+Choose **QuestBridge → Check for Updates…**, or use **Settings → General → Software updates**. The app checks this repository’s latest public GitHub release and opens its release page when you choose **View Release**. It does not download or install updates automatically.
+
+Automatic checks run at launch, when returning to the app, and periodically while it remains open, whenever seven days have passed since the last successful check. A successful manual check restarts that seven-day interval. New installations check on first launch. There is no background agent when the app is closed; the next launch catches up.
+
+Automatic checks only announce a newer stable version, and a dismissed version is not announced repeatedly. Offline and rate-limit errors stay quiet during automatic checks and may retry after an hour; manual checks explain errors. The request uses GitHub’s public API without a login and sends no headset details or filenames.
+
 ## Transfer reliability
 
 Transfers run serially; browsing remains available. ADB copies file contents directly without media processing or loading videos into application memory. Uploads and downloads go to uniquely named hidden staging items, are checked against a file-size manifest (including nested folders), and are then moved into their final names. Local upload sources are never deleted.

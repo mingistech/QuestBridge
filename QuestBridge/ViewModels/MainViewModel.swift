@@ -22,6 +22,7 @@ enum BrowserSort: String, CaseIterable { case name = "Name", size = "Size", date
 @MainActor @Observable final class MainViewModel {
     let preferences = Preferences()
     let queue = TransferQueue()
+    let updates = UpdateChecker(installedVersion: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "Unknown")
     var devices: [QuestDevice] = []
     var selectedSerial = UserDefaults.standard.string(forKey: "selectedDevice") ?? ""
     var context: DeviceContext?
