@@ -1,0 +1,14 @@
+.DS_Store
+.build/
+build/
+DerivedData/
+*.xcuserstate
+QuestBridge/Resources/adb/
+Vendor/platform-tools/*
+!Vendor/platform-tools/README.md
+dist/
+xcuserdata/
+*.xcuserdatad/
+*.p12
+*.p8
+*.mobileprovision
