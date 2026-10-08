@@ -1,6 +1,6 @@
 # QuestBridge
 
-A native macOS 15.6+ file manager for Meta Quest headsets, built with Swift 6 and SwiftUI. All headset operations use ADB; MTP is not used.
+A native macOS file manager for Meta Quest headsets, built with Swift 6 and SwiftUI. All headset operations use ADB; MTP is not used.
 
 ![QuestBridge setup guide](Documentation/Images/QuestBridge.png)
 
