@@ -2,7 +2,7 @@
 
 Mac App Store edition — updated October 17, 2026
 
-Contact: mingistech@mac.com
+Contact: mingistech.support@icloud.com
 
 QuestBridge transfers files between your Mac and your connected headset. It has
 no online account, advertising, analytics or tracking service. It does not send
@@ -50,7 +50,7 @@ and authorization; quit first and check for any wanted temporary copies.
 
 ## Support And Other Services
 
-For support, email mingistech@mac.com. Sending a report is your choice. Include
+For support, email mingistech.support@icloud.com. Sending a report is your choice. Include
 only the information needed to explain the issue and avoid sending private
 media, identifiers or authorization keys. Mail services and any third-party
 websites you choose to use have their own policies. Meta's account and headset

@@ -2,7 +2,7 @@
 
 Mac editions
 
-Contact: mingistech@mac.com
+Contact: mingistech.support@icloud.com
 
 ## Connect Your Headset
 
@@ -36,7 +36,7 @@ the matching materials.
 
 ## Contact Support
 
-Email mingistech@mac.com with the app version, macOS version, Mac architecture,
+Email mingistech.support@icloud.com with the app version, macOS version, Mac architecture,
 headset model/software version, cable type and reproduction steps. Review any
 diagnostic text before sending it and redact private paths and identifiers.
 Never send your ADB private key or sensitive media. A public issue tracker is
