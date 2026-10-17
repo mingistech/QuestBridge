@@ -2,8 +2,6 @@
 
 Mac editions
 
-Contact: mingistech.support@icloud.com
-
 ## Connect Your Headset
 
 Enable Developer Mode using Meta's setup process, connect a USB data cable,
