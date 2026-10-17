@@ -29,8 +29,9 @@ valuable headset content.
 
 Open Settings → Connection → Open ADB Licenses to read the bundled distribution
 notice, third-party notices and LGPL text. Source and relinking materials must
-match the ADB version supplied with your app; ask support if you cannot locate
-the matching materials.
+match the ADB version supplied with your app. For the App Store preparation
+build, use the [matching source and relinking kit](https://github.com/mingistech/QuestBridge/releases/tag/adb-source-37.0.0p1-r2).
+This kit does not match the Google ADB in the existing GitHub app release.
 
 ## Contact Support
 
